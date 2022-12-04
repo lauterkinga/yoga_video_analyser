@@ -322,8 +322,7 @@ class yoga_pose_classification_trainer:
         plt.close("all")
 
     def linear_function(self, model_name, learning_rate=0.001, batch_size=16, epoch=500):
-        mlflow.tensorflow.autolog(registered_model_name=model_name, log_input_examples=True,
-                                  log_model_signatures=True)
+        mlflow.tensorflow.autolog(registered_model_name=model_name)
         mlflow.log_param('train data file', self.train_data_file)
         mlflow.log_param('test data file', self.test_data_file)
         mlflow.log_param('keypoint confidence threshold', self.confidence_threshold)
@@ -371,8 +370,7 @@ class yoga_pose_classification_trainer:
         self.make_report(self.y_strict_test, y_predicted_strict, "test_strict_")
 
     def knn_function(self, model_name, k_value):
-        mlflow.sklearn.autolog(registered_model_name=model_name, log_input_examples=True,
-                               log_model_signatures=True)
+        mlflow.sklearn.autolog(registered_model_name=model_name)
         mlflow.log_param('train data file', self.train_data_file)
         mlflow.log_param('test data file', self.test_data_file)
         mlflow.log_param('keypoint confidence threshold', self.confidence_threshold)
@@ -397,8 +395,7 @@ class yoga_pose_classification_trainer:
         self.make_report(self.y_strict_test, y_strict_predicted, "test_strict_")
 
     def rf_function(self, model_name, max_depth):
-        mlflow.sklearn.autolog(registered_model_name=model_name, log_input_examples=True,
-                               log_model_signatures=True)
+        mlflow.sklearn.autolog(registered_model_name=model_name)
         mlflow.log_param('train data file', self.train_data_file)
         mlflow.log_param('test data file', self.test_data_file)
         mlflow.log_param('keypoint confidence threshold', self.confidence_threshold)
