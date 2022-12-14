@@ -249,7 +249,6 @@ class video_yoga_analyser:
         frame_keypoints = []
         good_frame_idx = []
         current_frame_idx = 0
-        # todo boxnal nem is nezzni az elozot? lehetnek valtasok
         for frame in video:
             height, width, channel = frame.shape
             converted_img = tf.expand_dims(frame, axis=0)

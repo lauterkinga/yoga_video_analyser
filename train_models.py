@@ -16,7 +16,7 @@ import seaborn as sb
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
 
-# https://www.tensorflow.org/guide/keras/train_and_evaluate
+# source: https://www.tensorflow.org/guide/keras/train_and_evaluate
 
 np.set_printoptions(threshold=sys.maxsize)
 
@@ -211,7 +211,7 @@ class yoga_pose_classification_trainer:
         acs = accuracy_score(y_true, y_predicted)
         mlflow.log_metric(prefix_name + 'accuracy_all', acs)
         print('accuracy score', acs)
-        # http://gabrielelanaro.github.io/blog/2016/02/03/multiclass-evaluation-measures.html
+        # source: http://gabrielelanaro.github.io/blog/2016/02/03/multiclass-evaluation-measures.html
 
         cm = confusion_matrix(y_true, y_predicted, labels=classes)
         fig = plt.figure(figsize=(150, 150))
